@@ -1,44 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <parent>
-        <groupId>io.smallrye</groupId>
-        <artifactId>smallrye-graphql-tools-parent</artifactId>
-        <version>2.8.2</version>
-    </parent>
-    <modelVersion>4.0.0</modelVersion>
-
-    <name>SmallRye: GraphQL Tools :: Maven plugin tests</name>
-    <description>Tests for the SmallRye GraphQL Maven Plugin</description>
-    <artifactId>smallrye-graphql-maven-plugin-tests</artifactId>
-
-    <dependencies>
-        <dependency>
-            <groupId>org.apache.maven.shared</groupId>
-            <artifactId>maven-verifier</artifactId>
-            <version>1.8.0</version>
-            <scope>test</scope>
-        </dependency>
-    </dependencies>
-
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <configuration>
-                    <systemProperties>
-                        <plugin.version>${project.version}</plugin.version>
-                    </systemProperties>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.sonatype.plugins</groupId>
-                <artifactId>nexus-staging-maven-plugin</artifactId>
-                <configuration>
-                    <skipNexusStagingDeployMojo>true</skipNexusStagingDeployMojo>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
-
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>io.smallrye</groupId>
+    <artifactId>smallrye-graphql-tools-parent</artifactId>
+    <version>2.8.2</version>
+  </parent>
+  <artifactId>smallrye-graphql-maven-plugin-tests</artifactId>
+  <name>SmallRye: GraphQL Tools :: Maven plugin tests</name>
+  <description>Tests for the SmallRye GraphQL Maven Plugin</description>
+  <dependencies>
+    <dependency>
+      <groupId>org.apache.maven.shared</groupId>
+      <artifactId>maven-verifier</artifactId>
+      <version>1.8.0</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <configuration>
+          <systemProperties>
+            <plugin.version>${project.version}</plugin.version>
+          </systemProperties>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 </project>
